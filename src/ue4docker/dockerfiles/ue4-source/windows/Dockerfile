@@ -42,6 +42,7 @@ ENV GIT_ASKPASS=C:\git-credential-helper.bat
 WORKDIR C:\
 RUN mkdir C:\UnrealEngine && `
 	cd C:\UnrealEngine && `
+	git config --global credential.interactive false && `
 	git init && `
 	{% if git_config %}
 	{% for key, value in git_config.items() %}
